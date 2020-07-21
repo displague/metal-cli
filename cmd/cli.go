@@ -27,6 +27,7 @@ func NewCli() *Cli {
 	var err error
 	cli := &Cli{}
 	cli.Client, err = packngo.NewClientWithBaseURL("Packet CLI", os.Getenv("PACKET_TOKEN"), nil, "https://api.packet.net/")
+	cli.Client.UserAgent = fmt.Sprintf("packet-cli/%s %s", Version, cli.Client.UserAgent)
 	if err != nil {
 		fmt.Println("Client error:", err)
 		return nil
