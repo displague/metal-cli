@@ -19,3 +19,5 @@ require (
 	golang.org/x/term v0.0.0-20210615171337-6886f2dfbf5b
 	sigs.k8s.io/yaml v1.2.0
 )
+
+replace github.com/packethost/packngo => ../packngo

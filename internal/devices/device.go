@@ -53,6 +53,7 @@ func (c *Client) NewCommand() *cobra.Command {
 
 	cmd.AddCommand(
 		c.Retrieve(),
+		c.Traffic(),
 		c.Create(),
 		c.Delete(),
 		c.Update(),
