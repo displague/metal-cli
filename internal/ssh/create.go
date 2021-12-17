@@ -32,7 +32,7 @@ var (
 )
 
 func (c *Client) Create() *cobra.Command {
-	var createSSHKeyCmd = &cobra.Command{
+	createSSHKeyCmd := &cobra.Command{
 		Use:   "create",
 		Short: "Creates an SSH key",
 		Long: `Example:

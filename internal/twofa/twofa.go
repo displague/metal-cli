@@ -33,7 +33,7 @@ type Client struct {
 }
 
 func (c *Client) NewCommand() *cobra.Command {
-	var cmd = &cobra.Command{
+	cmd := &cobra.Command{
 		Use:     "2fa",
 		Aliases: []string{"tfa", "mfa", "totp"},
 		Short:   "Two Factor Authentication operations",

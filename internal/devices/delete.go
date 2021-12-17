@@ -39,7 +39,7 @@ func (c *Client) Delete() *cobra.Command {
 		fmt.Println("Device deletion initiated. Please check 'metal device get -i", deviceID, "' for status")
 		return nil
 	}
-	var deleteDeviceCmd = &cobra.Command{
+	deleteDeviceCmd := &cobra.Command{
 		Use:   "delete",
 		Short: "Deletes a device",
 		Long: `Example:	

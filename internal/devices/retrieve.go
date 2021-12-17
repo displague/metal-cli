@@ -28,7 +28,7 @@ import (
 )
 
 func (c *Client) Retrieve() *cobra.Command {
-	var retrieveDeviceCmd = &cobra.Command{
+	retrieveDeviceCmd := &cobra.Command{
 		Use:     "get",
 		Aliases: []string{"list"},
 		Short:   "Retrieves device list or device details",

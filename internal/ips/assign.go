@@ -35,7 +35,7 @@ func (c *Client) Assign() *cobra.Command {
 	)
 
 	// assignIpCmd represents the assignIp command
-	var assignIPCmd = &cobra.Command{
+	assignIPCmd := &cobra.Command{
 		Use:   "assign",
 		Short: "Assigns an IP address to a given device",
 		Long: `Example:

@@ -33,7 +33,7 @@ func (c *Client) Disable() *cobra.Command {
 		sms, app bool
 	)
 	// disable2faCmd represents the disable2fa command
-	var disable2faCmd = &cobra.Command{
+	disable2faCmd := &cobra.Command{
 		Use:   "disable",
 		Short: "Disables two factor authentication",
 		Long: `Example:

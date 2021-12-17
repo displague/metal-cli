@@ -31,7 +31,7 @@ func (c *Client) Retrieve() *cobra.Command {
 		checkMetro    bool
 	)
 	// retrieveCapacitiesCmd represents the retrieveCapacity command
-	var retrieveCapacityCmd = &cobra.Command{
+	retrieveCapacityCmd := &cobra.Command{
 		Use:     "get",
 		Aliases: []string{"list"},
 		Short:   "Returns a list of facilities or metros and plans with their current capacity.",

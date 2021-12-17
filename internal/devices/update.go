@@ -28,7 +28,6 @@ import (
 )
 
 func (c *Client) Update() *cobra.Command {
-
 	var (
 		description   string
 		locked        bool
@@ -42,7 +41,7 @@ func (c *Client) Update() *cobra.Command {
 	)
 
 	// updateDeviceCmd represents the updateDevice command
-	var updateDeviceCmd = &cobra.Command{
+	updateDeviceCmd := &cobra.Command{
 		Use:   "update",
 		Short: "Updates a device",
 		Long: `Example:

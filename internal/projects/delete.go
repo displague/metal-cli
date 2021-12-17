@@ -42,7 +42,7 @@ func (c *Client) Delete() *cobra.Command {
 		return nil
 	}
 	// deleteProjectCmd represents the deleteProject command
-	var deleteProjectCmd = &cobra.Command{
+	deleteProjectCmd := &cobra.Command{
 		Use:   "delete",
 		Short: "Deletes a project",
 		Long: `Example:

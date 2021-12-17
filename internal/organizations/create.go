@@ -36,7 +36,7 @@ func (c *Client) Create() *cobra.Command {
 	)
 
 	// createOrganizationCmd represents the createOrganization command
-	var createOrganizationCmd = &cobra.Command{
+	createOrganizationCmd := &cobra.Command{
 		Use:   "create",
 		Short: "Creates an organization",
 		Long: `Example:

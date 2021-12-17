@@ -44,7 +44,7 @@ func (c *Client) Delete() *cobra.Command {
 	}
 
 	// deleteVirtualNetworkCmd represents the deleteVirtualNetwork command
-	var deleteVirtualNetworkCmd = &cobra.Command{
+	deleteVirtualNetworkCmd := &cobra.Command{
 		Use:   "delete",
 		Short: "Deletes a Virtual Network",
 		Long: `Example:

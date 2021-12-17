@@ -44,7 +44,7 @@ func (c *Client) Delete() *cobra.Command {
 	}
 
 	// deleteOrganizationCmd represents the deleteOrganization command
-	var deleteOrganizationCmd = &cobra.Command{
+	deleteOrganizationCmd := &cobra.Command{
 		Use:   "delete",
 		Short: "Deletes an organization",
 		Long: `Example:

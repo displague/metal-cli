@@ -35,7 +35,7 @@ func (c *Client) Check() *cobra.Command {
 		metro, facility, plan     string
 		quantity                  int
 	)
-	var checkCapacityCommand = &cobra.Command{
+	checkCapacityCommand := &cobra.Command{
 		Short:   "Validates if a deploy can be fulfilled with the given quantity in any of the given locations and plans",
 		Use:     `check {-m [metros,...] | -f [facilities,...]} -P [plans,...] -q [quantity]`,
 		Example: `metal capacity check -m sv,ny,da -P c3.large.arm,c3.medium.x86 -q 10`,
@@ -43,7 +43,7 @@ func (c *Client) Check() *cobra.Command {
 			var checker func(*packngo.CapacityInput) (*packngo.CapacityInput, *packngo.Response, error)
 			var locationField string
 			var locationer func(si packngo.ServerInfo) string
-			var req = &packngo.CapacityInput{
+			req := &packngo.CapacityInput{
 				Servers: []packngo.ServerInfo{},
 			}
 
@@ -74,7 +74,8 @@ func (c *Client) Check() *cobra.Command {
 						req.Servers = append(req.Servers, packngo.ServerInfo{
 							Facility: f,
 							Plan:     p,
-							Quantity: quantity},
+							Quantity: quantity,
+						},
 						)
 					}
 				}
@@ -89,7 +90,8 @@ func (c *Client) Check() *cobra.Command {
 						req.Servers = append(req.Servers, packngo.ServerInfo{
 							Metro:    m,
 							Plan:     p,
-							Quantity: quantity},
+							Quantity: quantity,
+						},
 						)
 					}
 				}

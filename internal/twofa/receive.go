@@ -28,11 +28,10 @@ import (
 )
 
 func (c *Client) Receive() *cobra.Command {
-
 	var app, sms bool
 
 	// receive2faCmd represents the receive2fa command
-	var receive2faCmd = &cobra.Command{
+	receive2faCmd := &cobra.Command{
 		Use:   "receive",
 		Short: "Receive two factor authentication token",
 		Long: `Example:

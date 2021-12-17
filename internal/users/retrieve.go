@@ -27,9 +27,7 @@ import (
 )
 
 func (c *Client) Retrieve() *cobra.Command {
-	var (
-		userID string
-	)
+	var userID string
 
 	// retriveUserCmd represents the retriveUser command
 	retrieveUserCmd := &cobra.Command{

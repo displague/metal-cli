@@ -28,7 +28,7 @@ import (
 func (c *Client) Move() *cobra.Command {
 	var projectID, hardwareReservationID string
 
-	var moveHardwareReservationCmd = &cobra.Command{
+	moveHardwareReservationCmd := &cobra.Command{
 		Use:   "move",
 		Short: "Move hardware reservation to another project",
 		Long: `Example:

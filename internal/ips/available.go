@@ -26,14 +26,12 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var (
-	cidr int
-)
+var cidr int
 
 func (c *Client) Available() *cobra.Command {
 	var reservationID string
 	// availableCmd represents the available command
-	var availableCmd = &cobra.Command{
+	availableCmd := &cobra.Command{
 		Use:   "available",
 		Short: "Retrieves a list of IP resevations for a single project.",
 		Long: `Example:
@@ -44,7 +42,6 @@ metal ip available --reservation-id [reservation_id] --cidr [size_of_subnet]
 		RunE: func(cmd *cobra.Command, args []string) error {
 			cmd.SilenceUsage = true
 			result, _, err := c.ProjectService.AvailableAddresses(reservationID, &packngo.AvailableRequest{CIDR: cidr})
-
 			if err != nil {
 				return errors.Wrap(err, "Could not get available IP addresses")
 			}

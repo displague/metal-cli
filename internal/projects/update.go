@@ -29,7 +29,7 @@ import (
 func (c *Client) Update() *cobra.Command {
 	var projectID, name, paymentMethodID string
 	// updateProjectCmd represents the updateProject command
-	var updateProjectCmd = &cobra.Command{
+	updateProjectCmd := &cobra.Command{
 		Use:   "update",
 		Short: "Updates a project",
 		Long: `Example:

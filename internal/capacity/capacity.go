@@ -34,7 +34,7 @@ type Client struct {
 
 func (c *Client) NewCommand() *cobra.Command {
 	// capacityCmd represents the capacity command
-	var cmd = &cobra.Command{
+	cmd := &cobra.Command{
 		Use:   "capacity",
 		Short: "Capacities operations",
 		Long:  `Capacities operations: get, check`,

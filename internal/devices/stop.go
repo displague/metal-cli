@@ -29,7 +29,7 @@ import (
 
 func (c *Client) Stop() *cobra.Command {
 	var deviceID string
-	var stopDeviceCmd = &cobra.Command{
+	stopDeviceCmd := &cobra.Command{
 		Use:   "stop",
 		Short: "Stops a device",
 		Long: `Example:
@@ -40,7 +40,6 @@ func (c *Client) Stop() *cobra.Command {
 		RunE: func(cmd *cobra.Command, args []string) error {
 			cmd.SilenceUsage = true
 			_, err := c.Service.PowerOff(deviceID)
-
 			if err != nil {
 				return errors.Wrap(err, "Could not stop Device")
 			}

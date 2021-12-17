@@ -29,7 +29,6 @@ import (
 )
 
 func (c *Client) Request() *cobra.Command {
-
 	var (
 		ttype     string
 		quantity  int
@@ -40,7 +39,7 @@ func (c *Client) Request() *cobra.Command {
 	)
 
 	// requestIPCmd represents the requestIp command
-	var requestIPCmd = &cobra.Command{
+	requestIPCmd := &cobra.Command{
 		Use:   "request",
 		Short: "Request an IP block",
 		Long: `Example:

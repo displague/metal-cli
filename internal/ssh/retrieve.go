@@ -26,13 +26,10 @@ import (
 )
 
 func (c *Client) Retrieve() *cobra.Command {
-
-	var (
-		sshKeyID string
-	)
+	var sshKeyID string
 
 	// retrieveSshKeysCmd represents the retrieveSshKeys command
-	var retrieveSSHKeysCmd = &cobra.Command{
+	retrieveSSHKeysCmd := &cobra.Command{
 		Use:     "get",
 		Aliases: []string{"list"},
 		Short:   "Retrieves a list of available SSH keys or a single SSH key",

@@ -32,7 +32,7 @@ import (
 func (c *Client) Retrieve() *cobra.Command {
 	var projectID, projectName string
 	// retrieveProjectCmd represents the retriveProject command
-	var retrieveProjectCmd = &cobra.Command{
+	retrieveProjectCmd := &cobra.Command{
 		Use:     "get",
 		Aliases: []string{"list"},
 		Short:   "Retrieves all available projects or a single project",

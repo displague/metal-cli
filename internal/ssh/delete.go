@@ -42,7 +42,7 @@ func (c *Client) Delete() *cobra.Command {
 		return nil
 	}
 	// deleteSSHKeyCmd represents the deleteSSHKey command
-	var deleteSSHKeyCmd = &cobra.Command{
+	deleteSSHKeyCmd := &cobra.Command{
 		Use:   "delete",
 		Short: "Deletes an SSH key",
 		Long: `Example:

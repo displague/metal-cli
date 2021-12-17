@@ -33,7 +33,7 @@ func (c *Client) Create() *cobra.Command {
 	var projectID, metro, facility, description string
 
 	// createVirtualNetworkCmd represents the createVirtualNetwork command
-	var createVirtualNetworkCmd = &cobra.Command{
+	createVirtualNetworkCmd := &cobra.Command{
 		Use:   "create",
 		Short: "Creates a virtual network",
 		Long: `Example:

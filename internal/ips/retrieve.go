@@ -36,7 +36,7 @@ func (c *Client) Retrieve() *cobra.Command {
 	)
 
 	// ipCmd represents the ip command
-	var retrieveIPCmd = &cobra.Command{
+	retrieveIPCmd := &cobra.Command{
 		Use:     "get",
 		Aliases: []string{"list"},
 		Short:   "Retrieves information about IP addresses, IP reservations and IP assignments",

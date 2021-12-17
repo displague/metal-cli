@@ -29,7 +29,7 @@ import (
 func (c *Client) Update() *cobra.Command {
 	var sshKeyID string
 	// updateSSHKeyCmd represents the updateSSHKey command
-	var updateSSHKeyCmd = &cobra.Command{
+	updateSSHKeyCmd := &cobra.Command{
 		Use:   "update",
 		Short: "Updates a project",
 		Long: `Example:

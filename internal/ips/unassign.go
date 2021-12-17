@@ -30,7 +30,7 @@ import (
 func (c *Client) Unassign() *cobra.Command {
 	var assignmentID string
 	// unassignIpCmd represents the unassignIp command
-	var unassignIPCmd = &cobra.Command{
+	unassignIPCmd := &cobra.Command{
 		Use:   "unassign",
 		Short: "Unassigns an IP address.",
 		Long: `Example:

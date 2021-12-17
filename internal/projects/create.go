@@ -34,7 +34,7 @@ func (c *Client) Create() *cobra.Command {
 	)
 
 	// projectCreateCmd represents the projectCreate command
-	var createProjectCmd = &cobra.Command{
+	createProjectCmd := &cobra.Command{
 		Use:   "create",
 		Short: "Creates a project",
 		Long: `Example:

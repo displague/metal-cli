@@ -30,7 +30,7 @@ import (
 func (c *Client) Remove() *cobra.Command {
 	var reservationID string
 	// removeIPCmd represents the removeIp command
-	var removeIPCmd = &cobra.Command{
+	removeIPCmd := &cobra.Command{
 		Use:   "remove",
 		Short: "Command to remove IP reservation.",
 		Long: `Example:	
