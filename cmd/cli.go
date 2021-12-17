@@ -1,8 +1,6 @@
 package cmd
 
 import (
-	"github.com/spf13/cobra"
-
 	"github.com/equinix/metal-cli/internal/capacity"
 	root "github.com/equinix/metal-cli/internal/cli"
 	"github.com/equinix/metal-cli/internal/completion"
@@ -24,15 +22,16 @@ import (
 	"github.com/equinix/metal-cli/internal/twofa"
 	"github.com/equinix/metal-cli/internal/users"
 	"github.com/equinix/metal-cli/internal/vlan"
+	"github.com/spf13/cobra"
 )
 
-// Cli struct
+// Cli struct.
 type Cli struct {
 	MainCmd  *cobra.Command
 	Outputer outputPkg.Outputer
 }
 
-// VERSION build
+// VERSION build.
 var (
 	Version string = "devel"
 )
@@ -43,7 +42,7 @@ const (
 	apiURL         = "https://api.equinix.com/metal/v1/"
 )
 
-// NewCli struct
+// NewCli struct.
 func NewCli() *Cli {
 	cli := &Cli{
 		Outputer: &outputPkg.Standard{},

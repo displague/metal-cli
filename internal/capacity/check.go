@@ -28,7 +28,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// createOrganizationCmd represents the createOrganization command
+// createOrganizationCmd represents the createOrganization command.
 func (c *Client) Check() *cobra.Command {
 	var (
 		metros, facilities, plans []string
