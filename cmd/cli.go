@@ -33,12 +33,12 @@ type Cli struct {
 
 // VERSION build.
 var (
-	Version string = "devel"
+	Version = "devel"
 )
 
 const (
-	consumerToken  = "Equinix Metal CLI"
-	apiTokenEnvVar = "METAL_AUTH_TOKEN"
+	consumerToken  = "Equinix Metal CLI" // nolint:gosec this is not a secret
+	apiTokenEnvVar = "METAL_AUTH_TOKEN"  // nolint:gosec this is not a secret
 	apiURL         = "https://api.equinix.com/metal/v1/"
 )
 

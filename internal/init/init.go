@@ -93,7 +93,7 @@ func (c *Client) NewCommand() *cobra.Command {
 			fmt.Println()
 			token := string(b)
 			c.Servicer.SetToken(token)
-			metalClient := c.Servicer.API(cmd)
+			metalClient := c.Servicer.API()
 			c.UserService = metalClient.Users
 			c.ProjectService = metalClient.Projects
 
@@ -178,7 +178,7 @@ func writeConfig(config string, b []byte) error {
 }
 
 type Servicer interface {
-	API(*cobra.Command) *packngo.Client
+	API() *packngo.Client
 	ListOptions(defaultIncludes, defaultExcludes []string) *packngo.ListOptions
 	SetToken(string)
 	DefaultConfig(bool) string

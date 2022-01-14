@@ -64,7 +64,7 @@ func TestProjectOperations(t *testing.T) {
 					t.Fatal(err)
 				}
 
-				projectID = (*project).ID
+				projectID = project.ID
 			}
 		})
 	}

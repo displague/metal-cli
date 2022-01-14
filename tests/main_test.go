@@ -114,33 +114,34 @@ func TestCliArgs(t *testing.T) {
 			if strings.Contains(strings.ToLower(actual), "error:") {
 				t.Fatal(actual)
 			}
-			if len(tt.args) > 0 {
-				if tt.args[0] == "project" {
-					project := &[]packngo.Project{}
-					err := json.Unmarshal([]byte(actual), project)
-					if err != nil {
-						t.Fatal(err)
-					}
-					projectID = (*project)[0].ID
-				} else if tt.args[0] == "device" && tt.args[1] == "create" {
-					device := &packngo.Device{}
-					// fmt.Println(actual)
-					err := json.Unmarshal([]byte(actual), device)
-					if err != nil {
-						t.Fatal(err)
-					}
+			if len(tt.args) == 0 {
+				return
+			}
+			if tt.args[0] == "project" {
+				project := &[]packngo.Project{}
+				err := json.Unmarshal([]byte(actual), project)
+				if err != nil {
+					t.Fatal(err)
+				}
+				projectID = (*project)[0].ID
+			} else if tt.args[0] == "device" && tt.args[1] == "create" {
+				device := &packngo.Device{}
+				// fmt.Println(actual)
+				err := json.Unmarshal([]byte(actual), device)
+				if err != nil {
+					t.Fatal(err)
+				}
 
-					deviceID = (*device).ID
-					for {
-						dev, _, err := client.Devices.Get(deviceID, nil)
-						if err != nil {
-							break
-						}
-						if dev.State == "active" {
-							break
-						}
-						time.Sleep(2 * time.Second)
+				deviceID = device.ID
+				for {
+					dev, _, err := client.Devices.Get(deviceID, nil)
+					if err != nil {
+						break
 					}
+					if dev.State == "active" {
+						break
+					}
+					time.Sleep(2 * time.Second)
 				}
 			}
 		})

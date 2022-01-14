@@ -47,7 +47,7 @@ func (c *Client) NewCommand() *cobra.Command {
 				}
 			}
 
-			c.Service = c.Servicer.API(cmd).Devices
+			c.Service = c.Servicer.API().Devices
 		},
 	}
 
@@ -64,7 +64,7 @@ func (c *Client) NewCommand() *cobra.Command {
 }
 
 type Servicer interface {
-	API(*cobra.Command) *packngo.Client
+	API() *packngo.Client
 	ListOptions(defaultIncludes, defaultExcludes []string) *packngo.ListOptions
 	Config(cmd *cobra.Command) *viper.Viper
 }

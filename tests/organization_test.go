@@ -63,7 +63,7 @@ func TestOrganizationOperations(t *testing.T) {
 					t.Fatal(err)
 				}
 
-				organizationID = (*organization).ID
+				organizationID = organization.ID
 			}
 		})
 	}

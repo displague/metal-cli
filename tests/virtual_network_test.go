@@ -64,7 +64,7 @@ func TestVirtualNetworkOperations(t *testing.T) {
 					t.Fatal(err)
 				}
 
-				virtualNetworkID = (*virtualNetwork).ID
+				virtualNetworkID = virtualNetwork.ID
 			}
 		})
 	}

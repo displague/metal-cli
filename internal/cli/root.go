@@ -45,8 +45,8 @@ type Client struct {
 	// apiClient client
 	apiClient *packngo.Client
 
-	includes      *[]string // nolint:unused
-	excludes      *[]string // nolint:unused
+	includes      *[]string
+	excludes      *[]string
 	filters       *[]string
 	search        string
 	sortBy        string
@@ -61,11 +61,11 @@ type Client struct {
 	viper         *viper.Viper
 }
 
-func NewClient(consumerToken, apiURL, Version string) *Client {
+func NewClient(consumerToken, apiURL, version string) *Client {
 	return &Client{
 		consumerToken: consumerToken,
 		apiURL:        apiURL,
-		Version:       Version,
+		Version:       version,
 	}
 }
 
@@ -96,7 +96,7 @@ func (c *Client) Config(cmd *cobra.Command) *viper.Viper {
 		}
 		if err := v.ReadInConfig(); err != nil {
 			if _, ok := err.(viper.ConfigFileNotFoundError); !ok {
-				panic(fmt.Errorf("Could not read config: %s", err))
+				panic(fmt.Errorf("Could not read config: %w", err))
 			}
 		}
 		c.cfgFile = v.ConfigFileUsed()
@@ -136,7 +136,7 @@ func bindFlags(cmd *cobra.Command, v *viper.Viper) {
 	})
 }
 
-func (c *Client) API(cmd *cobra.Command) *packngo.Client {
+func (c *Client) API() *packngo.Client {
 	if c.metalToken == "" {
 		log.Fatal("Equinix Metal authentication token not provided. Please set the 'METAL_AUTH_TOKEN' environment variable or create a configuration file using 'metal init'.")
 	}

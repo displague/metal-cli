@@ -45,7 +45,7 @@ func (c *Client) NewCommand() *cobra.Command {
 					root.PersistentPreRun(cmd, args)
 				}
 			}
-			c.Service = c.Servicer.API(cmd).Projects
+			c.Service = c.Servicer.API().Projects
 		},
 	}
 
@@ -59,7 +59,7 @@ func (c *Client) NewCommand() *cobra.Command {
 }
 
 type Servicer interface {
-	API(*cobra.Command) *packngo.Client
+	API() *packngo.Client
 	ListOptions(defaultIncludes, defaultExcludes []string) *packngo.ListOptions
 	Format() outputs.Format
 }

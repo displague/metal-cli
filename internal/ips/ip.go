@@ -46,8 +46,8 @@ func (c *Client) NewCommand() *cobra.Command {
 					root.PersistentPreRun(cmd, args)
 				}
 			}
-			c.ProjectService = c.Servicer.API(cmd).ProjectIPs
-			c.DeviceService = c.Servicer.API(cmd).DeviceIPs
+			c.ProjectService = c.Servicer.API().ProjectIPs
+			c.DeviceService = c.Servicer.API().DeviceIPs
 		},
 	}
 
@@ -63,7 +63,7 @@ func (c *Client) NewCommand() *cobra.Command {
 }
 
 type Servicer interface {
-	API(*cobra.Command) *packngo.Client
+	API() *packngo.Client
 	ListOptions(defaultIncludes, defaultExcludes []string) *packngo.ListOptions
 }
 

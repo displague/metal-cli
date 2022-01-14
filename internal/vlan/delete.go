@@ -62,7 +62,7 @@ metal virtual-network delete -i [virtual_network_UUID]
 
 				_, err := prompt.Run()
 				if err != nil {
-					return nil
+					return nil // nolint:nilerr canceling the prompt is not an error
 				}
 			}
 			return errors.Wrap(deleteVnet(vnetID), "Could not delete Virtual Network")
