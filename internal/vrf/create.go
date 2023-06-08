@@ -65,7 +65,7 @@ func (c *Client) Create() *cobra.Command {
 	createVRFCmd.Flags().IntVarP(&LocalASN)
 	createVRFCmd.Flags().IntVarP(&ip_ranges)
 	_ = createDeviceCmd.MarkFlagRequired("name")
-	_ = createDeviceCmd.MarkFlagRequired("nmetro")
+	_ = createDeviceCmd.MarkFlagRequired("metro")
 	_ = createDeviceCmd.MarkFlagRequired("LocalASN")
 	_ = createDeviceCmd.MarkFlagRequired("IPrange")
 
