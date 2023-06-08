@@ -9,7 +9,13 @@ import (
 
 
 func (c *Client) Create() *cobra.Command {
-	var metro, name, IPranges string, LocalASN int, description string
+	var (
+	    metro string
+	    name string
+	    description string
+	    ipRanges []string
+	    localASN int
+        )
 
 	// createVRFCmd represents the creatVRF command
 	createVRFCmd := &cobra.Command{
