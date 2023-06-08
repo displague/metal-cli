@@ -23,7 +23,7 @@ func (c *Client) Create() *cobra.Command {
 
 			req := &packngo.VRFCreateRequest{
 				Metro:     metro,
-				name:	   name,
+				Name:	   name,
 				IPranges,  IPranges,
 				LocalASN,  LocalASN,
 			}
