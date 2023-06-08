@@ -27,7 +27,7 @@ import (
 	"github.com/equinix/metal-cli/internal/twofa"
 	"github.com/equinix/metal-cli/internal/users"
 	"github.com/equinix/metal-cli/internal/vlan"
-	"github.com/equinix/metal-cli-vrfsupport/internal/vrf"
+	"github.com/equinix/metal-cli/internal/vrf"
 )
 
 // Cli struct
