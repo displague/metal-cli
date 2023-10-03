@@ -53,7 +53,6 @@ func (c *Client) NewCommand() *cobra.Command {
 		c.Retrieve(),
 		c.Create(),
 		c.Delete(),
-		c.CreateVRF(),
 	)
 	return cmd
 }
